@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 200, 255),
+    rgb(70, 0, 128)
+  );
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.containar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 35%;
+  height: 80%;
+  padding: 5px 10px;
+  gap: 2px;
+}
+
+#backspace,
+#equal {
+  grid-column: span 2;
+}
+
+.input {
+  font-size: 30px;
+  font-weight: bolder;
+  grid-column: span 4;
+  justify-items: center;
+  outline: none;
+  border: none;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+[type="button"] {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  font-size: 2rem;
+  border: none;
+  background-color: rgba(0, 128, 255, 0.742);
+  transition: all 200ms ease-in;
+}
+
+[type="button"]:hover {
+  transform: scale(1.02);
+  background-color: rgba(91, 123, 228, 0.742);
+}
+
+@media screen and (max-width: 600px) {
+  .containar {
+    width: 95%;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  .body {
+    height: 80vh;
+  }
+}
