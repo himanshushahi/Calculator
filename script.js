@@ -35,10 +35,16 @@ let insert = (num) => {
 };
 
 let equal = () => {
-  if (arr[0] == "+" || arr[0] == "-" || arr[0] == "*" || arr[0] == "/") {
-    arr = [];
-    inputField.value = "";
-  } else if (
+  if (arr[0] == "*" || arr[0] == "/") {
+    arr.shift();
+    inputField.value = ""
+     arr.forEach((elem)=>{
+      inputField.value+= elem;
+     })
+     let evalValue = eval(inputField.value);
+      inputField.value = evalValue == undefined ? "0" : evalValue;
+  } else
+   if (
     arr[arr.length - 1] == "-" ||
     arr[arr.length - 1] == "*" ||
     arr[arr.length - 1] == "/" ||
@@ -79,3 +85,4 @@ function clearAll() {
   inputField.value = "";
   arr = [];
 }
+
